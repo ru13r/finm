@@ -11,7 +11,7 @@ export default {
   props: {
     value: {
       type: [Number, String],
-      default: 0,
+      default: '',
     },
   },
   computed: {

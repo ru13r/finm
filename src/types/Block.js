@@ -9,15 +9,23 @@ const Tag = unit => label => ({
 });
 const Monetary = Tag('USD mn');
 
-const line1 = Line(Monetary('Three'))(Const(30000));
-const line2 = Line(Monetary('Four'))(Const(-15000));
-const line3 = Line(Monetary('Five'))(Const(25000));
+const line1 = Line(Monetary('Wheat'))(Const(30000));
+const line2 = Line(Monetary('Barley'))(Const(-15000));
+const line3 = Line(Monetary('Oats'))(Const(25000));
+const line4 = Line(Monetary('Soybeans'))(Const(-25000));
 
-const block = {
+const block1 = {
   tag: {
-    title: 'A Sample Table Block',
+    title: 'Harvest',
   },
-  data: [line1, line2, line3, line3.map(x => x * 2), line2.map(x => -x)],
+  data: [line1, line2, line3, line4, line4.map(x => 2 * x)],
 };
 
-export const Blocks = [block, block, block];
+const block2 = {
+  tag: {
+    title: 'Price',
+  },
+  data: [line3, line4, line2, line3, line4],
+};
+
+export const Blocks = [block1, block2, block1, block2];

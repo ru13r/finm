@@ -7,7 +7,7 @@ q-page.flex.flex-center
 import { Blocks } from "src/types/Block";
 import ModelViewer from "components/ModelViewer";
 export default {
-  name: 'SampleTable',
+  name: 'SampleModel',
   components: { ModelViewer },
   data: () => ({
     blocks: Blocks

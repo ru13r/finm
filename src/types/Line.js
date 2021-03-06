@@ -6,3 +6,10 @@ export const Line = tag => data => ({
     data: data.map(f),
   }),
 });
+
+// function Line(tag, data) {
+//   const l = {
+//     tag,
+//   };
+//   return l;
+//}

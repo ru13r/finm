@@ -4,24 +4,23 @@ q-table(
   :data='tableData',
   :columns='columns',
   dense,
-  hide-bottom
+  hide-bottom,
   hide-header
 )
-  template(v-slot:body-cell="props")
+  template(v-slot:body-cell='props')
     q-td
-      number-cell(:value="props.value")
+      number-cell(:value='props.value')
   template(v-slot:top-row)
     q-tr
-      q-td(colspan="100%").bg-primary.text-white {{ title }}
+      q-td.bg-primary.text-white(colspan='100%') {{ title }}
   template(v-slot:bottom-row)
     q-tr
-      q-td(colspan="100%") &nbsp;
-
+      q-td(colspan='100%') &nbsp;
 </template>
 
 <script>
 import { Timeline } from 'src/types/Timeline';
-import NumberCell from "components/NumberCell";
+import NumberCell from 'components/NumberCell';
 
 /*
   name is required to link index and data
@@ -46,7 +45,7 @@ const lineToRow = line => {
 
 export default {
   name: 'BlockViewer',
-  components: {NumberCell},
+  components: { NumberCell },
   props: {
     block: {
       type: Object,
@@ -66,7 +65,7 @@ export default {
         align: 'left',
         sortable: false,
         classes: 'bg-grey-2',
-        headerClasses: 'bg-primary text-white'
+        headerClasses: 'bg-primary text-white',
       },
       // Unit column
       {
@@ -77,7 +76,7 @@ export default {
         align: 'left',
         sortable: false,
         classes: 'bg-grey-2',
-        headerClasses: 'bg-primary text-white'
+        headerClasses: 'bg-primary text-white',
       },
       // Data (period) columns
       ...Timeline.map((x, i) => ({
@@ -92,7 +91,6 @@ export default {
     ],
     tableData: ({ block }) => block.data.map(lineToRow),
   },
-
 };
 </script>
 
