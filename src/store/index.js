@@ -27,6 +27,3 @@ export default function (/* { ssrContext } */) {
 
   return Store;
 }
-
-let a = 0;
-let b = 'fdfsfdfd';
